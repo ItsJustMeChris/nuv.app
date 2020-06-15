@@ -1,2 +1,5 @@
 <p>Name: </p>
 <input type="file" name="" id="" (change)="onFileChange($event.target.files)">
+<input type="text" [(ngModel)]="downloadUrl">
+{{downloadUrl}}
+<button (click)="downloadFile()">Download</button>

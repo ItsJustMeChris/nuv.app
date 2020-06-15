@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UploadService } from '../upload.service';
+import { DownloadService } from '../download.service';
 
 @Component({
   selector: 'app-test-upload',
@@ -8,9 +9,13 @@ import { UploadService } from '../upload.service';
 })
 export class TestUploadComponent implements OnInit {
   private upload: UploadService;
+  private download: DownloadService;
 
-  constructor(upload: UploadService) {
+  downloadUrl: any;
+
+  constructor(upload: UploadService, download: DownloadService) {
     this.upload = upload;
+    this.download = download;
   }
 
   ngOnInit(): void {
@@ -20,4 +25,9 @@ export class TestUploadComponent implements OnInit {
     this.upload.putFile(file);
   }
 
+  downloadFile(): void {
+    console.log(this.downloadUrl);
+    console.log("Do Download");
+    this.download.download(this.downloadUrl);
+  }
 }

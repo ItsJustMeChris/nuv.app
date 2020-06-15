@@ -2,9 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
+interface UploadInfo {
+  UploadId: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UploadService {
   private httpClient: HttpClient;
 
@@ -12,13 +17,15 @@ export class UploadService {
     this.httpClient = httpClient;
   }
 
-  async putFile(file: File): Observable<any> {
+  async putFile(file: File): string {
     const fileToUpload = file[0];
     const FILE_CHUNK_SIZE = 10000000; // 10MB
     const fileSize = fileToUpload.size;
     const NUM_CHUNKS = Math.floor(fileSize / FILE_CHUNK_SIZE) + 1;
 
-    const uploadInfo = await this.httpClient.get(`http://127.0.0.1:8008/v1/file/start-upload/${fileToUpload.name}`).toPromise();
+    let completeUploadResp;
+
+    const uploadInfo = await this.httpClient.get<UploadInfo>(`http://127.0.0.1:8008/v1/file/start-upload/${fileToUpload.name}`).toPromise();
     for (let index = 1; index < NUM_CHUNKS + 1; index++) {
       const start = (index - 1) * FILE_CHUNK_SIZE
       const end = (index) * FILE_CHUNK_SIZE
@@ -35,7 +42,7 @@ export class UploadService {
       const putFile = await this.httpClient.put(uploadURL.url, compressedBlob, { headers: { 'Content-Type': fileToUpload.type }, observe: 'response' }).toPromise();
       const ETag = putFile.headers.get('ETag');
 
-      let completeUploadResp = await this.httpClient.post(`http://127.0.0.1:8008/v1/file/end-upload`, {
+      completeUploadResp = await this.httpClient.post(`http://127.0.0.1:8008/v1/file/end-upload`, {
         params: {
           fileName: fileToUpload.name,
           uploadId: uploadInfo.UploadId,
@@ -61,6 +68,6 @@ export class UploadService {
       // // console.log('   Upload no ' + index + '; Etag: ' + uploadResp.headers.etag)
       // promisesArray.push(uploadResp)
     }
-    return
+    return completeUploadResp.Location;
   }
 }
