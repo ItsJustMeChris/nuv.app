@@ -14,11 +14,10 @@ export class UploadService {
 
   async putFile(file: File): Observable<any> {
     const fileToUpload = file[0];
-    const FILE_CHUNK_SIZE = 10000000 // 10MB
-    const fileSize = fileToUpload.size
-    const NUM_CHUNKS = Math.floor(fileSize / FILE_CHUNK_SIZE) + 1
+    const FILE_CHUNK_SIZE = 10000000; // 10MB
+    const fileSize = fileToUpload.size;
+    const NUM_CHUNKS = Math.floor(fileSize / FILE_CHUNK_SIZE) + 1;
 
-    console.log(file);
     const uploadInfo = await this.httpClient.get(`http://127.0.0.1:8008/v1/file/start-upload/${fileToUpload.name}`).toPromise();
     for (let index = 1; index < NUM_CHUNKS + 1; index++) {
       const start = (index - 1) * FILE_CHUNK_SIZE
@@ -28,8 +27,12 @@ export class UploadService {
       // (1) Generate presigned URL for each part
       const uploadURL = await this.httpClient.get(`http://127.0.0.1:8008/v1/file/upload-url`, { params: { uploadId: uploadInfo.UploadId, partNumber: index, fileName: fileToUpload.name } }).toPromise();
       console.log(uploadURL);
+      const buffer = await blob.arrayBuffer();
 
-      const putFile = await this.httpClient.put(uploadURL.url, blob, { headers: { 'Content-Type': fileToUpload.type }, observe: 'response' }).toPromise();
+      const arr = new Uint8Array(buffer)
+      const compressed = flate.deflate_encode_raw(arr);
+      const compressedBlob = new Blob([compressed], {});
+      const putFile = await this.httpClient.put(uploadURL.url, compressedBlob, { headers: { 'Content-Type': fileToUpload.type }, observe: 'response' }).toPromise();
       const ETag = putFile.headers.get('ETag');
 
       let completeUploadResp = await this.httpClient.post(`http://127.0.0.1:8008/v1/file/end-upload`, {
