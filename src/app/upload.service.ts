@@ -6,6 +6,12 @@ interface UploadInfo {
   UploadId: string;
 }
 
+declare var flate: any;
+
+interface UploadUrl {
+  url: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +23,7 @@ export class UploadService {
     this.httpClient = httpClient;
   }
 
-  async putFile(file: File): string {
+  async putFile(file: File): Promise<string> {
     const fileToUpload = file[0];
     const FILE_CHUNK_SIZE = 10000000; // 10MB
     const fileSize = fileToUpload.size;
@@ -32,7 +38,7 @@ export class UploadService {
       const blob = (index < NUM_CHUNKS) ? fileToUpload.slice(start, end) : fileToUpload.slice(start)
 
       // (1) Generate presigned URL for each part
-      const uploadURL = await this.httpClient.get(`http://127.0.0.1:8008/v1/file/upload-url`, { params: { uploadId: uploadInfo.UploadId, partNumber: index, fileName: fileToUpload.name } }).toPromise();
+      const uploadURL = await this.httpClient.get<UploadUrl>(`http://127.0.0.1:8008/v1/file/upload-url`, { params: { uploadId: uploadInfo.UploadId, partNumber: index.toString(), fileName: fileToUpload.name } }).toPromise();
       console.log(uploadURL);
       const buffer = await blob.arrayBuffer();
 

@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+declare var flate: any;
+declare var streamSaver: any;
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +17,7 @@ export class DownloadService {
 
   download(url: string) {
     const fileStream = streamSaver.createWriteStream('resignation.txt')
-    window.writer = fileStream.getWriter()
+    const writer = fileStream.getWriter()
 
     const wasmFlateStream = new streamSaver.WritableStream({
       write(chunk) {
