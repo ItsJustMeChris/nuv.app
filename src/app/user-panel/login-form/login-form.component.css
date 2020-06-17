@@ -1,0 +1,137 @@
+:host {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #18425a;
+}
+
+section.left {
+  background: #2cb2ff;
+  height: 80%;
+  width: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 80%;
+  justify-content: center;
+  background: #fff;
+}
+
+.main-wrapper {
+  display: flex;
+  min-width: 15em;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main input {
+  border: unset;
+  background: unset;
+  padding: unset;
+  margin: unset;
+  height: 4em;
+  margin-bottom: 2em;
+  background: #f1f1f1;
+  padding-left: 0.7em;
+  transition: 0.2s;
+}
+
+main input:hover {
+  border-left: 0.3em solid #63e4ff;
+  padding-left: 0.4em;
+  transform: scale(1.1);
+}
+
+main input:focus {
+  border-left: 0.3em solid #63e4ff;
+  padding-left: 0.4em;
+  transform: scale(1.1);
+  outline: unset;
+}
+
+main button {
+  background: unset;
+  padding: unset;
+  font-size: 1.2em;
+  width: 5em;
+  background: #63e4ff;
+  color: #fff;
+  border: unset;
+  justify-self: flex-end;
+  align-self: flex-end;
+  border-radius: 0.2em;
+  transition: 0.2s;
+  height: 2em;
+}
+
+main button:hover {
+  background: #fff;
+  border: 0.1em solid #63e4ff;
+  transform: scale(1.2);
+  color: #63e4ff;
+  padding: unset;
+  cursor: pointer;
+}
+
+p.no-account {
+  align-self: flex-start;
+  position: absolute;
+  bottom: 6em;
+  margin-left: 1em;
+}
+
+main h1 {
+  border-left: 0.2em solid #63e4ff;
+  padding-left: 0.5em;
+}
+
+section.left img {
+  width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+  :host {
+    flex-direction: column;
+  }
+
+  main {
+    width: 80%;
+  }
+
+  section.left {
+    width: 80%;
+    height: 60%;
+  }
+
+  .main-wrapper {
+    height: 70%;
+  }
+
+  p.no-account {
+    margin-left: 1em;
+    bottom: 0em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host {
+    flex-direction: column;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  section.left {
+    width: 100%;
+    height: 40%;
+  }
+}

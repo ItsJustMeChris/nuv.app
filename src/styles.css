@@ -4,3 +4,15 @@ html {
   padding: 0px;
   font-family: "Nunito", sans-serif;
 }
+
+a {
+  color: #63e4ff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  font-weight: unset;
+  color: #5cd0e8;
+  font-weight: 700;
+}
