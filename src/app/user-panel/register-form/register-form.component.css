@@ -81,13 +81,6 @@ main button:hover {
   cursor: pointer;
 }
 
-p.no-account {
-  align-self: flex-start;
-  position: fixed;
-  bottom: 6em;
-  margin-left: 1em;
-}
-
 main h1 {
   border-left: 0.2em solid #63e4ff;
   padding-left: 0.5em;
