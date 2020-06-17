@@ -97,6 +97,12 @@ section.left img {
   width: 70%;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (max-width: 900px) {
   :host {
     flex-direction: column;

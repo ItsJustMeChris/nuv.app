@@ -8,7 +8,9 @@
     <input placeholder="Email" type="Email">
     <input placeholder="Password" type="password">
     <input placeholder="Confirm Password" type="password">
-    <button>Register</button>
+    <div class="row">
+      <a [routerLink]="['/login']">Log In!</a>
+      <button>Register</button>
+    </div>
   </div>
-  <p class="no-account">Already have an account? <a [routerLink]="['/login']">Log In!</a></p>
 </main>

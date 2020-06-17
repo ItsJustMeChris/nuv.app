@@ -6,7 +6,9 @@
     <h1>Welcome back</h1>
     <input placeholder="Username or Email" type="text">
     <input placeholder="Password" type="password">
-    <button>Login</button>
+    <div class="row">
+      <a [routerLink]="['/signup']">Sign Up!</a>
+      <button>Login</button>
+    </div>
   </div>
-  <p class="no-account">Don't have an account? <a [routerLink]="['/signup']">Sign Up!</a></p>
 </main>
