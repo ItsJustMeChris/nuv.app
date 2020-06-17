@@ -83,7 +83,7 @@ main button:hover {
 
 p.no-account {
   align-self: flex-start;
-  position: absolute;
+  position: fixed;
   bottom: 6em;
   margin-left: 1em;
 }
