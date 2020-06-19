@@ -41,6 +41,8 @@ main {
     flex-direction: row;
     max-width: unset;
     min-width: unset;
+    position: fixed;
+    width: 100vw;
   }
   header {
     display: none;
