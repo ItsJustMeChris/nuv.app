@@ -1,0 +1,85 @@
+:host {
+  display: flex;
+  justify-content: flex-end;
+  height: 10%;
+  align-items: center;
+}
+
+:host img {
+  height: 60px;
+  width: 60px;
+  border-radius: 60%;
+}
+
+.notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.8em;
+  font-size: 2.2em;
+  color: #ca2e55;
+}
+
+i.fas.fa-bell {
+  width: 1em;
+}
+
+.notifications span {
+  position: relative;
+  z-index: 12;
+  font-size: 0.4em;
+  color: #fff;
+  left: -2em;
+}
+
+@keyframes example {
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.notifications:hover {
+  animation-name: example;
+  animation-duration: 0.3s;
+  cursor: pointer;
+}
+
+input {
+  border: unset;
+  background: unset;
+  padding: unset;
+  margin: unset;
+  height: 3em;
+  background: #f1f1f1;
+  padding-left: 0.7em;
+  transition: 0.2s;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  margin-right: 5em;
+  min-width: 5em;
+  max-width: 10em;
+}
+
+input:hover {
+  border-left: 0.3em solid #63e4ff;
+  padding-left: 0.4em;
+  transform: scale(1.1);
+}
+
+input:focus {
+  border-left: 0.3em solid #63e4ff;
+  padding-left: 0.4em;
+  transform: scale(1.1);
+  outline: unset;
+}

@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+  overflow-y: hidden;
+}
+
+:host > main {
+  width: 100%;
+  background: #e7e9ef;
+  padding: 2em;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 3px 0px 6px -0.5px #8c8c8c;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    flex-direction: column-reverse;
+  }
+  :host > main {
+    width: unset;
+    border-top-left-radius: unset;
+    box-shadow: unset;
+    border-bottom-left-radius: unset;
+  }
+}
