@@ -1,6 +1,5 @@
 :host {
   display: flex;
-  justify-content: flex-end;
   height: 10%;
   align-items: center;
 }
@@ -82,4 +81,10 @@ input:focus {
   padding-left: 0.4em;
   transform: scale(1.1);
   outline: unset;
+}
+
+.group {
+  display: flex;
+  justify-self: flex-end;
+  margin-left: auto;
 }

@@ -25,5 +25,6 @@
     box-shadow: unset;
     border-bottom-left-radius: unset;
     height: 100vh;
+    padding-bottom: 200px;
   }
 }

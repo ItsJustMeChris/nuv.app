@@ -42,8 +42,11 @@ main {
     max-width: unset;
     min-width: unset;
     position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100vw;
     height: 100px;
+    z-index: 8675309;
   }
   header {
     display: none;

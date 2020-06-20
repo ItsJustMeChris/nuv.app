@@ -1,0 +1,79 @@
+:host {
+  width: 49%;
+  display: flex;
+  max-width: 1080px;
+  flex-direction: column;
+}
+
+.left {
+  width: 30%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+}
+
+.right {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p.month {
+  height: 1em;
+  line-height: 1em;
+  margin: unset;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+p.usage {
+  height: 1em;
+  line-height: 1em;
+  margin: unset;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+i.mobile.fas.fa-ellipsis-h {
+  display: none;
+}
+
+button.month-selector {
+  height: 100px;
+  background: #e7e9ef;
+  border: unset;
+  border-radius: 1em;
+  width: 40px;
+  color: #000;
+  transition: 0.2s;
+  font-size: 2em;
+}
+
+button.month-selector:hover {
+  background: #63e4ff;
+  color: #fff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .right,
+  .left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  i.desktop.fas.fa-ellipsis-v {
+    display: none;
+  }
+  i.mobile.fas.fa-ellipsis-h {
+    display: block;
+  }
+  button.month-selector {
+    width: 100%;
+    height: 40px;
+  }
+}
