@@ -1,0 +1,39 @@
+:host {
+  width: 60%;
+  display: flex;
+  max-width: 1080px;
+  flex-direction: column;
+}
+
+:host .left {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+:host .right {
+  width: 50%;
+  background: #e7e9ef;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  :host .right,
+  :host .left {
+    width: 100%;
+  }
+  :host .right {
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  :host {
+    width: 100%;
+  }
+}

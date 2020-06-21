@@ -1,3 +1,10 @@
+:root {
+  --gray: #e7e9ef;
+  --branding-main: #63e4ff;
+  --branding-main-active: #5cd0e8;
+  --light-gray: #f1f1f1;
+}
+
 body,
 html {
   margin: 0px;
@@ -9,13 +16,17 @@ html {
 }
 
 a {
-  color: #63e4ff;
+  color: var(--branding-main);
   text-decoration: none;
   transition: 0.2s;
 }
 
 a:hover {
   font-weight: unset;
-  color: #5cd0e8;
+  color: var(--branding-main-active);
   font-weight: 700;
+}
+
+button:focus {
+  outline: unset;
 }

@@ -40,20 +40,17 @@ main input {
   margin-bottom: 2em;
   height: 4em;
   background: #f1f1f1;
-  padding-left: 0.7em;
+  padding-left: 0.4em;
   transition: 0.2s;
+  border-left: 0.3em solid #f1f1f1;
 }
 
 main input:hover {
-  border-left: 0.3em solid #63e4ff;
-  padding-left: 0.4em;
-  transform: scale(1.1);
+  border-left: 0.3em solid var(--branding-main);
 }
 
 main input:focus {
-  border-left: 0.3em solid #63e4ff;
-  padding-left: 0.4em;
-  transform: scale(1.1);
+  border-left: 0.3em solid var(--branding-main);
   outline: unset;
 }
 
@@ -62,7 +59,7 @@ main button {
   padding: unset;
   font-size: 1.2em;
   width: 5em;
-  background: #63e4ff;
+  background: var(--branding-main);
   color: #fff;
   border: unset;
   justify-self: flex-end;
@@ -74,15 +71,14 @@ main button {
 
 main button:hover {
   background: #fff;
-  border: 0.1em solid #63e4ff;
-  transform: scale(1.2);
-  color: #63e4ff;
+  border: 0.1em solid var(--branding-main);
+  color: var(--branding-main);
   padding: unset;
   cursor: pointer;
 }
 
 main h1 {
-  border-left: 0.2em solid #63e4ff;
+  border-left: 0.2em solid var(--branding-main);
   padding-left: 0.5em;
 }
 

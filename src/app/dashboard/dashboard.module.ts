@@ -8,11 +8,13 @@ import { UsageReportComponent } from './components/usage-report/usage-report.com
 import { CardComponent } from './components/card/card.component';
 import { UploadThisMonthComponent } from './components/upload-this-month/upload-this-month.component';
 import { DownloadThisMonthComponent } from './components/download-this-month/download-this-month.component';
+import { DuoToneCardComponent } from './components/duo-tone-card/duo-tone-card.component';
+import { FileBrowserComponent } from './views/file-browser/file-browser.component';
 
 
 
 @NgModule({
-  declarations: [SidebarComponent, PanelComponent, DashboardComponent, HeaderComponent, UsageReportComponent, CardComponent, UploadThisMonthComponent, DownloadThisMonthComponent],
+  declarations: [SidebarComponent, PanelComponent, DashboardComponent, HeaderComponent, UsageReportComponent, CardComponent, UploadThisMonthComponent, DownloadThisMonthComponent, DuoToneCardComponent, FileBrowserComponent],
   imports: [
     CommonModule
   ],

@@ -1,29 +1,54 @@
-  <dashboard-component-card header="Usage Report">
-    <div class="left">
-      <img src="assets/svg/chart.svg" alt="">
-      <div class="stats">
-        <span class="large">250 GB</span>
-        <div class="separator"></div>
-        <span class="small">Used</span>
-      </div>
-    </div>
-    <div class="right">
-      <div class="stats">
-        <span class="large">250 GB</span>
-        <div class="separator"></div>
-        <span class="small">Available</span>
-      </div>
-      <div class="charts">
-        <svg class="chart" height="100%" width="100%">
-         <circle class="circle-1" cx="50%" cy="50%" r="25%" stroke-linecap="round" stroke="#63e4ff" stroke-width="6" fill="none" />
-         <circle class="circle-2" cx="50%" cy="50%" r="15%" stroke-linecap="round" stroke="#C3ACCE" stroke-width="6" fill="none" />
-        </svg>
-      </div>
-      <div class="key">
-        <p class="used">Used</p>
-        <div class="used"></div>
-        <p class="available">Free</p>
-        <div class="available"></div>
-      </div>
-    </div>
-  </dashboard-component-card>
+<dashboard-component-duo-tone-card header="Usage Report">
+    <ng-container class="left">
+        <img
+            src="assets/svg/chart.svg"
+            alt
+        >
+        <div class="stats">
+            <span class="large">250 GB</span>
+            <div class="separator"></div>
+            <span class="small">Used</span>
+        </div>
+    </ng-container>
+    <ng-container class="right">
+        <div class="stats">
+            <span class="large">250 GB</span>
+            <div class="separator"></div>
+            <span class="small">Available</span>
+        </div>
+        <div class="charts">
+            <svg
+                class="chart"
+                height="100%"
+                width="100%"
+            >
+                <circle
+                    class="circle-1"
+                    cx="50%"
+                    cy="50%"
+                    r="25%"
+                    stroke-linecap="round"
+                    stroke="var(--branding-main)"
+                    stroke-width="6"
+                    fill="none"
+                ></circle>
+                <circle
+                    class="circle-2"
+                    cx="50%"
+                    cy="50%"
+                    r="15%"
+                    stroke-linecap="round"
+                    stroke="#C3ACCE"
+                    stroke-width="6"
+                    fill="none"
+                ></circle>
+            </svg>
+        </div>
+        <div class="key">
+            <p class="used">Used</p>
+            <div class="used"></div>
+            <p class="available">Free</p>
+            <div class="available"></div>
+        </div>
+    </ng-container>
+</dashboard-component-duo-tone-card>

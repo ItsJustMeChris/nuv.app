@@ -62,24 +62,21 @@ input {
   margin: unset;
   height: 3em;
   background: #f1f1f1;
-  padding-left: 0.7em;
+  padding-left: 0.4em;
   transition: 0.2s;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   margin-right: 5em;
   min-width: 5em;
   max-width: 10em;
+  border-left: 0.3em solid #f1f1f1;
 }
 
 input:hover {
-  border-left: 0.3em solid #63e4ff;
-  padding-left: 0.4em;
-  transform: scale(1.1);
+  border-left: 0.3em solid var(--branding-main);
 }
 
 input:focus {
-  border-left: 0.3em solid #63e4ff;
-  padding-left: 0.4em;
-  transform: scale(1.1);
+  border-left: 0.3em solid var(--branding-main);
   outline: unset;
 }
 

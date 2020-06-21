@@ -1,0 +1,11 @@
+<dashboard-component-card [header]="header">
+    <div [class]="flip ? 'right' : 'left'">
+        <ng-content select=".left"></ng-content>
+    </div>
+    <div
+        [class]="flip ? 'left' : 'right'"
+        [style.background]="tintedBackground"
+    >
+        <ng-content select=".right"></ng-content>
+    </div>
+</dashboard-component-card>

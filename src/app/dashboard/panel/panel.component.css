@@ -7,7 +7,7 @@
 
 :host > main {
   width: 100%;
-  background: #e7e9ef;
+  background: var(--gray);
   padding: 2em;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;

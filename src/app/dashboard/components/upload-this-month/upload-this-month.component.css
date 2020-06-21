@@ -54,7 +54,7 @@ button.month-selector {
 }
 
 button.month-selector:hover {
-  background: #63e4ff;
+  background: var(--branding-main);
   color: #fff;
   transition: 0.2s;
   cursor: pointer;

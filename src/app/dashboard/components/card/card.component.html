@@ -1,4 +1,4 @@
-<header>{{header}}</header>
-<main>
-  <ng-content></ng-content>
+<header *ngIf="header">{{header}}</header>
+<main [style.background]="cardBackground">
+    <ng-content></ng-content>
 </main>

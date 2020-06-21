@@ -1,12 +1,12 @@
 body {
-  background: #63e4ff;
+  background: var(--branding-main);
 }
 .box {
   width: 150px;
   height: 150px;
   border: 5px dashed white;
   position: relative;
-  background: #63e4ff;
+  background: var(--branding-main);
   border-radius: 3px;
   position: absolute;
   top: 50%;
@@ -30,7 +30,7 @@ body {
   height: 0;
   bottom: -6px;
   right: -5px;
-  background: #63e4ff;
+  background: var(--branding-main);
   animation-name: borderboxbefore;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -44,7 +44,7 @@ body {
   height: 6px;
   top: -5px;
   right: -5px;
-  background: #63e4ff;
+  background: var(--branding-main);
   animation-name: borderboxafter;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -166,5 +166,5 @@ body {
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background: #63e4ff;
+  background: var(--branding-main);
 }

@@ -1,39 +1,16 @@
-:host {
+:host .stats {
   width: 60%;
-  display: flex;
-  max-width: 1080px;
-  flex-direction: column;
+  margin-left: 1em;
 }
 
-.left {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.right {
-  width: 50%;
-  background: #e7e9ef;
-  border-radius: 10px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-}
-
-.right .stats {
-  width: 60%;
-}
-
-.left img {
+:host img {
   height: 200px;
   width: 60%;
   justify-self: center;
   align-self: center;
 }
 
-.stats {
+:host .stats {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -41,20 +18,16 @@
   justify-content: center;
 }
 
-.right .stats {
-  margin-left: 1em;
-}
-
-span.large {
+:host span.large {
   font-size: 1.7em;
   text-align: center;
 }
 
-span.small {
+:host span.small {
   color: #808080;
 }
 
-.separator {
+:host .separator {
   width: 2em;
   height: 0.2em;
   margin-top: 1em;
@@ -62,25 +35,25 @@ span.small {
   margin-bottom: 1em;
 }
 
-svg.chart {
+:host svg.chart {
   transform: rotate(-90deg);
 }
 
-circle.circle-1 {
+:host circle.circle-1 {
   stroke-dasharray: calc((2 * 25% * 3.14159) * 50 / 100), 999;
 }
 
-circle.circle-2 {
+:host circle.circle-2 {
   stroke-dasharray: calc((2 * 15% * 3.14159) * 50 / 100), 999;
 }
 
-.charts {
+:host .charts {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.key {
+:host .key {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,38 +62,22 @@ circle.circle-2 {
   margin-right: 1em;
 }
 
-div.used {
+:host div.used {
   height: 3px;
-  background: #63e4ff;
+  background: var(--branding-main);
   width: 100%;
 }
 
-div.available {
+:host div.available {
   height: 3px;
   background: #c3acce;
   width: 100%;
 }
 
-p.used {
-  color: #63e4ff;
+:host p.used {
+  color: var(--branding-main);
 }
 
-p.available {
+:host p.available {
   color: #c3acce;
-}
-
-@media only screen and (max-width: 1000px) {
-  .right,
-  .left {
-    width: 100%;
-  }
-  .right {
-    margin-top: 1em;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  :host {
-    width: 100%;
-  }
 }
